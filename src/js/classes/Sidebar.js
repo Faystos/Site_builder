@@ -2,6 +2,7 @@ import { formSidebar } from '../utils';
 import { TitleBlock } from './TitleBlock';
 import { TextBlock } from './TextBlock';
 
+
 export default class Sidebar {
   constructor(selector, cbUpdate) {
     this.$el = document.querySelector(selector);
@@ -28,7 +29,7 @@ export default class Sidebar {
     const styles = evt.target.styles.value;
 
     const Constructor = type === 'text' ? TextBlock : TitleBlock;
-    const newBlock = new Constructor(value, styles);
+    const newBlock = new Constructor(value, { styles });    
     this.cbUpdate(newBlock);
     
     evt.target.reset();

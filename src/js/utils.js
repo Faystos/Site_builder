@@ -25,3 +25,9 @@ export function formSidebar(type) {
     <hr/>
   `
 }
+
+export function css (styles = {}) {
+  const toStr = key => `${ key }: ${styles[key]}`;
+  return Object.keys(styles).map(toStr).join(';');
+
+}

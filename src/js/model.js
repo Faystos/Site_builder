@@ -3,17 +3,24 @@ import { TitleBlock } from './classes/TitleBlock';
 import { TextBlock } from './classes/TextBlock';
 import { ColumnsTextBlock } from './classes/ColumnsTextBlock';
 import { ImgBlock } from './classes/ImgBlock'; 
+import { css } from './utils';
 
 export const model = [
-  new TitleBlock('Мой конструктор сайтов', {
-    styles: '',
-    tag: 'h1',
-    className: 'display-4'
+  new TitleBlock('Мой конструктор сайтов!', {    
+    tag: 'h1',    
+    styles: css({
+      'text-align': 'center;',
+      'widht': '100%;',
+      'height': '100px;',
+      'background': '#4D4234',
+      'color': '#FFFFFF'
+    }),
   }),
-  new TextBlock('Учебный проект "Конструктор сайтов" написанный на чистом JS', {
-    styles: '',
+  new TextBlock('Учебный проект "Конструктор сайтов" написанный на чистом JS', {    
     tag: 'p',
-    className: 'lead my-3'
+    styles: css({
+      'color': 'red'
+    }),    
   }),
   new ColumnsTextBlock([
     'Используется только нативный JS.',
@@ -21,7 +28,9 @@ export const model = [
     'Учусь писать приложение с нуля.'
   ], 
   {
-    styles: 'padding: 1rem;'
+    styles: css({
+      'padding': '1rem;'
+    })
   }),
   new ImgBlock(img, {}), 
 ];
