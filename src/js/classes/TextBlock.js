@@ -6,7 +6,7 @@ export class TextBlock extends Block {
     super('text', value, options)
   }
   toHTML() {
-    const { styles, tag, className } = this.options;
+    const { styles, tag = 'p', className } = this.options;
     return row(col(`<${ tag } class = "${ className }">${ this.value }</${ tag }>`), styles);
   }
 }
